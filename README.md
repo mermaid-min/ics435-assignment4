@@ -17,10 +17,11 @@ Fine-tunes GPT-2 to generate a complete joke from any 3 starting words.
 pip install transformers torch accelerate
 
 ### Usage
-Train the model
+#### Train the model
 - python gpt2_joke_finetune.py --train
 Or with more epochs for better quality:
 - python gpt2_joke_finetune.py --train --epochs 10
-Generate jokes
+
+#### Generate jokes
 - python gpt2_joke_finetune.py --generate --prompt "What did the"
 - python gpt2_joke_finetune.py --generate --prompt "Why did the chicken"
