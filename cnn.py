@@ -21,7 +21,6 @@ import numpy as np
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, classification_report
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Using device: {DEVICE}")
 
 CLASS_NAMES = [
     "T-shirt/top", "Trouser", "Pullover", "Dress", "Coat",
@@ -53,7 +52,7 @@ def get_dataloaders(augment=False, batch_size=64):
     train_transform = aug_transform if augment else base_transform
 
     # Load datasets
-    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+    data_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "FashionMNIST")
     os.makedirs(data_dir, exist_ok=True)
 
     full_train = torchvision.datasets.FashionMNIST(
@@ -260,7 +259,7 @@ def plot_loss_curves(histories, labels, filename="loss_curves.png"):
 
     plt.tight_layout()
     plt.savefig(filename, dpi=150, bbox_inches="tight")
-    plt.show()
+    plt.close()
     print(f"Saved: {filename}")
 
 
@@ -289,7 +288,7 @@ def plot_confusion_matrix(model, test_loader, model_name, filename=None):
     if filename:
         plt.savefig(filename, dpi=150, bbox_inches="tight")
         print(f"Saved: {filename}")
-    plt.show()
+    plt.close()
 
     print(f"\nClassification Report — {model_name}")
     print(classification_report(y_true, y_pred, target_names=CLASS_NAMES))
