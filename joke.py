@@ -8,11 +8,11 @@ Requirements:
 
 Usage:
     # Train the model
-    python gpt2_joke_finetune.py --train
+    python joke.py --train
 
     # Generate jokes after training
-    python gpt2_joke_finetune.py --generate --prompt "What did the"
-    python gpt2_joke_finetune.py --generate --prompt "Why did the"
+    python joke.py --generate --prompt "What did the"
+    python joke.py --generate --prompt "Why did the"
 """
 
 import os
