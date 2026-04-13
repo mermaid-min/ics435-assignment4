@@ -10,7 +10,7 @@ pip install torch torchvision scikit-learn matplotlib
 python fasion.py
 
 
-## Part2 - Fine-Tuning GPT-2 for Joke Generation
+## Part2 - Fine Tuning GPT-2 for Joke Generation
 Fine-tunes GPT-2 to generate a complete joke from any 3 starting words.
 
 ### Requirements
